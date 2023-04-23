@@ -1,15 +1,9 @@
-
 import requests
 import urllib3
 import json # for debugging purposes (print pretty json)
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-
-auth_url = "https://www.strava.com/oauth/token"
-
-athletes_url = "https://www.strava.com/api/v3/athlete/athlete"
-
-def get_strava_access_token(user_info):
+def get_strava_access_token(user_info, auth_url):
     client_id = user_info['client_id']
     client_secret = user_info['client_secret']
     refresh_token = user_info['refresh_token']
