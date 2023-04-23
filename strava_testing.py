@@ -19,8 +19,8 @@ print("Requesting Access Token...\n")
 res = requests.post(auth_url, data=payload, verify=False)
 #print(res.json())
 access_token = res.json()['access_token']
-res_json = res.json()
-print(json.dumps(res, indent = 4))
+#res_json = res.json()
+#print(json.dumps(res, indent = 4))
 #print(f"Access Token: {access_token}\n")
 #print(f"Access Token: {access_token}\n")
 
