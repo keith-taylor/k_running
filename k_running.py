@@ -2,6 +2,10 @@ import requests
 from strava_tokens import get_strava_access_token
 from strava_data_calls import get_strava_activites 
 
+activities_url = "https://www.strava.com/api/v3/athlete/activities"
+auth_url = "https://www.strava.com/oauth/token"
+athletes_url = "https://www.strava.com/api/v3/athlete/athlete"
+
 activities_per_page = 200
 num_pages = 1
 
@@ -11,10 +15,10 @@ user_info = {
     'refresh_token': 'ab22c653921ac96d02b9b5a22386e9300cadbb0a',
 }
 
-access_token = get_strava_access_token(user_info)
-print(access_token)
+access_token = get_strava_access_token(user_info, auth_url)
 
-activities_dataset = get_strava_activites(access_token, activities_per_page, num_pages) 
+activities_dataset = get_strava_activites(access_token, activities_per_page, num_pages,
+                                          activities_url) 
 
 print("Your last ten runs are: ")
 
