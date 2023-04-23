@@ -22,7 +22,4 @@ def get_strava_access_token(user_info, auth_url):
     #print(json.dumps(res_json, indent = 4))
     access_token = response.json()['access_token']
     return access_token
-    
-
-    
-    
+        
