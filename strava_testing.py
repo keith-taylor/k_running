@@ -1,6 +1,7 @@
 
 import requests
 import urllib3
+import json 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 auth_url = "https://www.strava.com/oauth/token"
@@ -18,7 +19,9 @@ print("Requesting Access Token...\n")
 res = requests.post(auth_url, data=payload, verify=False)
 #print(res.json())
 access_token = res.json()['access_token']
-
+res_json = res.json()
+print(json.dumps(res, indent = 4))
+#print(f"Access Token: {access_token}\n")
 #print(f"Access Token: {access_token}\n")
 
 header = {'Authorization': 'Bearer ' + access_token,'read_permission': "read_all"}
