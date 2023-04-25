@@ -5,3 +5,4 @@
 *.dll
 *.iso
 user_info/
+user_info.py
