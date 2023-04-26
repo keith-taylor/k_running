@@ -2,7 +2,7 @@
 from user_info import *
 
 import requests
-import json
+import json 
 from strava_tokens import get_strava_access_token
 from strava_data_calls import get_strava_activites 
 from data_processes import print_last_ten_activities
